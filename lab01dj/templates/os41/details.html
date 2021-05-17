@@ -1,0 +1,16 @@
+{% extends 'os41/base.html' %}
+{% load static %}
+{% block title_block %}
+<a href="/os41/all"> Back </a>
+<h1>Welcome: {{ students.fname }} {{ students.lname }}</h1>
+<img src="{% static 'image/dress.jpg' %}" width='50' height="50"/>
+
+{% endblock %}
+
+{% block main_block %}
+<h3>fname: {{ students.fname }}</h3>
+<h3>lname: {{ students.lname }}</h3>
+<h3>age: {{ students.age }}</h3>
+<h3>student_track: {{ students.student_track }}</h3>
+<h3>is_grad: {{ students.is_grad }}</h3>
+{% endblock %}

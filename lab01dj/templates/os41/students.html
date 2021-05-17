@@ -1,0 +1,28 @@
+{% extends 'os41/base.html' %}
+{% block title_block %}
+<h1>All students</h1>
+{% endblock %}
+
+{% block main_block %}
+<a href="/os41/new">Add new student</a>
+<table border="2">
+    <th>Fname</th>
+    <th>Lname</th>
+    <th>Age</th>
+    <th>Track</th>
+    <th>Graduated</th>
+    <th>Actions</th>
+    <th>Delete</th>
+    {% for s in students %}
+    <tr>
+        <td><a href="/os41/student/{{s.id}}" >{{s.fname}}</a></td>
+        <td>{{s.lname}}</td>
+        <td>{{s.age}}</td>
+        <td>{{s.student_track}}</td>
+        <td>{{s.is_grad}}</td>
+        <td><a href="/os41/edit/{{s.id}}">Edit</a></td>
+        <td><a href="/os41/delete/{{s.id}}">Delete</a></td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}
